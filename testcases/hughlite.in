@@ -1,0 +1,23 @@
+[Nodes]
+Rain, Sprinkler, GrassWet
+
+[Probabilities]
++Rain = 0.2
++Sprinkler|+Rain = 0.01
++Sprinkler|-Rain = 0.4
++GrassWet|+Sprinkler, +Rain = 0.99 
++GrassWet|+Sprinkler, -Rain = 0.9
++GrassWet|-Sprinkler, +Rain = 0.8
++GrassWet|-Sprinkler, -Rain = 0.0
+
+[Queries]
++Rain
+-Rain
++Sprinkler
+-Sprinkler
++GrassWet
+-GrassWet
++GrassWet|+Sprinkler
++GrassWet|-Sprinkler
++GrassWet|+Sprinkler, +Rain
+-GrassWet|+Sprinkler, -Rain

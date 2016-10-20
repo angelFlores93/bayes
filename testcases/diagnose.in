@@ -1,0 +1,16 @@
+[Nodes]
+Test, Ill
+
+[Probabilities]
++Ill = 0.001
++Test|+Ill=0.9
++Test|-Ill=0.05
+
+[Queries]
++Ill
+-Ill
++Ill|+Test
++Test
+-Test
++Test|+Ill
++Test|-Ill
